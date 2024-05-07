@@ -1,10 +1,10 @@
-opam distribution crutch 
-========================
+Distribution crutch opam repository
+===================================
 
 An opam repository with a few packages that your distribution may be
 missing.
 
-To add it to your opam repos and swiches do:
+To add it to your opam repos and switches do:
 
 ```
 opam repo add --all --set-default distrib-crutch \
