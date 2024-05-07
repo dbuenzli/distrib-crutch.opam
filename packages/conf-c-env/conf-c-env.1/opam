@@ -10,5 +10,5 @@ setenv:
  [C_INCLUDE_PATH =+ "%{prefix}%/include" ]]
 
 description:"\
-This package configures pkg-config and your C toolchain too lookup
+This package configures pkg-config and your C toolchain to lookup
 in your opam switch too."
