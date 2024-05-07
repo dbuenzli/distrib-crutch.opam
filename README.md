@@ -4,18 +4,18 @@ opam distribution crutch
 An opam repository with a few packages that your distribution may be
 missing.
 
-To add it to your repos do:
+To add it to your opam repos and swiches do:
 
 ```
-opam repo add --set-default distrib-crutch \
-          git+https://github.com/dbuenzli/opam-distrib-crutch.git
+opam repo add --all --set-default distrib-crutch \
+          git+https://github.com/dbuenzli/distrib-crutch.opam.git
 ```
 
 The packages can be listed with:
    
 ```
-opam update
-opam list --repo=distrib-crutch
+opam update distrib-crutch
+opam list -a --repo=distrib-crutch
 ```
 
 ## Purpose and limitations
@@ -38,7 +38,7 @@ Otherwise see [this example]. In particular include a
 `x-distrib-status` with a link on the package's status on 
 <https://repology.org/>.
 
-[this example]: packages/libblake3-dev/opam
+[this example]: packages/libblake3-dev/libblake3-dev.1.5.1/opam
 
 ## License
 
