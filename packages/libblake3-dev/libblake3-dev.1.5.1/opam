@@ -1,0 +1,33 @@
+opam-version: "2.0"
+synopsis: "The libblake3 C library"
+description:"This package installs the libblake3 C library."
+maintainer: "opam-distrib-crutch maintainers"
+x-distrib-status: "https://repology.org/project/blake3"
+homepage: "https://blake3.io/"
+dev-repo: "git+https://github.com/BLAKE3-team/BLAKE3.git"
+bug-reports: "https://github.com/BLAKE3-team/BLAKE3/issues"
+authors: ["Jack O'Connor <oconnor663@gmail.com>"  "Samuel Neves"]
+license: "CC0-1.0 OR Apache-2.0"
+depends: [
+"conf-pkg-config" {build}
+"conf-cmake" {build}
+]
+build:
+[
+  ["cmake" "c"]
+  ["cmake" "--build" "."]
+]
+install:
+[
+  ["cmake" "--install" "." "--prefix" "%{prefix}%"]
+]
+url {
+src: "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.5.1.zip"
+checksum:
+"sha512=5017579386d11e7e621a6b56655c683bd51834531edb5c76c42539131a79a42a61eedb420cffb9be210c50a6bdd930cb24f975573bfb21e08ebefaec703b6c91"
+}
+
+# depexts: [
+#   ["blake3-devel"] {os-distribution = "fedora"}
+#   ["blake3"] {os-distribution = "homebrew" & os = "macos"}
+# ]

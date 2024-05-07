@@ -28,12 +28,17 @@ stabilize.
 Packages from this repository may be removed once
 <https://repology.org/> indicates good support for a given package.
 
-## Package names
+## Packaging
 
 In general we try to follow how the `opam` depexts would end up 
 being named for [`debian`](https://wiki.debian.org/Packaging)
-which is often `$(PKG)-dev`.
+which is often `$(PKG)-dev`. 
 
+Otherwise see [this example]. In particular include a 
+`x-distrib-status` with a link on the package's status on 
+<https://repology.org/>.
+
+[this example]: packages/libblake3-dev/opam
 
 ## License
 
