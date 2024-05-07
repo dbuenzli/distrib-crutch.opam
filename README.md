@@ -18,6 +18,12 @@ opam update distrib-crutch
 opam list -a --repo=distrib-crutch
 ```
 
+Note that some of the packages here install the [`conf-c-env`] package
+which tweaks environment variables to look for C libraries in your
+opam switch prefix.
+
+[`conf-c-env`]: packages/conf-c-env/conf-c-env.1/opam
+
 ## Purpose and limitations
 
 It is not the aim of this repo to supplant your system packager.  In
