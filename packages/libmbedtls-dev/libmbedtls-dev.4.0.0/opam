@@ -15,16 +15,31 @@ depends: [
 ]
 build:
 [
+  [ "./tf-psa-crypto/scripts/config.py"
+      "--file" "./tf-psa-crypto/include/psa/crypto_config.h" "set"
+      "MBEDTLS_THREADING_C" ]
+
+  [ "./tf-psa-crypto/scripts/config.py"
+      "--file" "./tf-psa-crypto/include/psa/crypto_config.h" "set"
+      "MBEDTLS_THREADING_PTHREAD" ]
+
   ["cmake" "."
       "-DUSE_SHARED_MBEDTLS_LIBRARY=On"
       "-DENABLE_PROGRAMS=Off"
       "-DENABLE_TESTING=Off"
-      "-DCMAKE_INSTALL_RPATH=%{lib}%" ]
+      "-DCMAKE_INSTALL_RPATH=%{lib}%"
+      "-DGEN_FILES=OFF"
+      # Cargo culted from homebrew
+      "-DCMAKE_INSTALL_PREFIX=%{prefix}%"
+      "-DCMAKE_INSTALL_LIBDIR=%{lib}%"
+      "-DCMAKE_BUILD_TYPE=Release"
+      "-DCMAKE_FIND_FRAMEWORK=LAST"
+      "-DCMAKE_VERBOSE_MAKEFILE=ON" ]
   ["cmake" "--build" "."]
 ]
 install:
 [
-  ["cmake" "--install" "." "--prefix" "%{prefix}%"]
+  ["cmake" "--install" "."]
 ]
 url {
 src: "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.0.0/mbedtls-4.0.0.tar.bz2"
