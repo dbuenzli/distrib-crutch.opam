@@ -28,12 +28,10 @@ build:
       "-DENABLE_PROGRAMS=Off"
       "-DENABLE_TESTING=Off"
       "-DCMAKE_INSTALL_RPATH=%{lib}%"
+      "-DCMAKE_INSTALL_NAME_DIR=%{lib}%" # To have the correct @rpath
       "-DGEN_FILES=OFF"
-      # Cargo culted from homebrew
       "-DCMAKE_INSTALL_PREFIX=%{prefix}%"
       "-DCMAKE_INSTALL_LIBDIR=%{lib}%"
-      "-DCMAKE_BUILD_TYPE=Release"
-      "-DCMAKE_FIND_FRAMEWORK=LAST"
       "-DCMAKE_VERBOSE_MAKEFILE=ON" ]
   ["cmake" "--build" "."]
 ]
