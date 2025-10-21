@@ -19,7 +19,7 @@ build:
       "-DUSE_SHARED_MBEDTLS_LIBRARY=On"
       "-DENABLE_PROGRAMS=Off"
       "-DENABLE_TESTING=Off"
-  ]
+      "-DCMAKE_INSTALL_RPATH=%{lib}%" ]
   ["cmake" "--build" "."]
 ]
 install:
