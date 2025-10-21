@@ -8,15 +8,6 @@ setenv:
 [[PKG_CONFIG_PATH += "%{lib}%/pkgconfig" ]
  [LIBRARY_PATH += "%{lib}%"]
  [C_INCLUDE_PATH += "%{prefix}%/include" ]
-
- # This is unsatisfactory but at the moment we don't
- # manage to have the right @rpath resolution
- # in the dylds of libmbedtls-dev, so executable that
- # link against them fail, this does not happen
- # with brew installed mbedtls
- # Also it seems opam doesn't support
- # filters on setenv: this should be { os = "macos" }
- [DYLD_LIBRARY_PATH += "%{lib}%" ]
 ]
 
 description:"\
