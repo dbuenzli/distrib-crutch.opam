@@ -5,9 +5,9 @@ authors : "The distrib-crutch repo maintainers"
 homepage: "https://github.com/dbuenzli/distrib-crutch.opam"
 bug-reports: "https://github.com/dbuenzli/distrib-crutch/issues"
 setenv:
-[[PKG_CONFIG_PATH =+ "%{lib}%/pkgconfig" ]
- [LIBRARY_PATH =+ "%{lib}%"]
- [C_INCLUDE_PATH =+ "%{prefix}%/include" ]]
+[[PKG_CONFIG_PATH += "%{lib}%/pkgconfig" ]
+ [LIBRARY_PATH += "%{lib}%"]
+ [C_INCLUDE_PATH += "%{prefix}%/include" ]]
 
 description:"\
 This package configures pkg-config and your C toolchain to lookup
