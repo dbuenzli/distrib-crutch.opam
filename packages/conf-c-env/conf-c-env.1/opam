@@ -8,6 +8,7 @@ setenv:
 [[PKG_CONFIG_PATH += "%{lib}%/pkgconfig" ]
  [LIBRARY_PATH += "%{lib}%"]
  [C_INCLUDE_PATH += "%{prefix}%/include" ]
+ [LD_LIBRARY_PATH += "%{lib}%"]
 ]
 
 description:"\
